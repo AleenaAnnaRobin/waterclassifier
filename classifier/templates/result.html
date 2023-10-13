@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<style>
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  </style>
+<body>
+
+
+<div class="w3-container">
+  <h2>The water can be used for:</h2>
+</div>
+
+<div class="w3-row-padding">
+<form actiion="/profile/" method="GET">
+  {%csrf_token%}
+<div class="w3-third w3-margin-bottom">
+  <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+    <!-- <div class="container"> -->
+    <li class="w3-black w3-xlarge w3-padding-32"> {%for data in result%}
+      <span class="w3-opacity">{{data}}</span><br>
+      {%endfor%}</li>
+    <li class="w3-padding-16"><b>pH</b> {{ph}}</li>
+    <li class="w3-padding-16"><b>Dissolved Oxygen</b> {{oxygen}}</li>
+    <li class="w3-padding-16"><b>Temperature</b> {{temp}}</li>
+    <li class="w3-padding-16"><b>Conductivity</b> {{cond}}</li>
+    <li class="w3-padding-16"><b>Turbidity</b> {{turbidity}}</li>
+    <li class="w3-padding-16"><b>TDS</b> {{tds}}</li>
+    <li class="w3-padding-16"><b>Chlorine</b> {{chlorine}}</li>
+   
+    <li class="w3-light-grey w3-padding-24">
+      <a class="btn btn-primary" href="/profile/" role="button">Profile</a>
+      <a class="btn btn-primary" href="/profile/quality/" role="button">Enter new Value</a>
+       </li>
+  </ul>
+</div>
+</form>
+</div>
+</body>
+</html> 

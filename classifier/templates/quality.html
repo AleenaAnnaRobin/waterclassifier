@@ -1,0 +1,102 @@
+<html>
+<head>
+  <title>Water Classification</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    body {
+    background-image: url(https://images.unsplash.com/photo-1591203082535-3865e38b1ffe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: Felix titling;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Felix titling;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #result {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    font-display: green;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Water Classification</h1>
+    <form action="/profile/quality/" method="post">
+     {% csrf_token %}
+    <div class="form-group">
+      <label for="pH">pH:</label>
+      <input type="text" name="ph" id="pH" placeholder="pH">
+    </div>
+    <div class="form-group">
+      <label for="dissolvedOxygen">Dissolved Oxygen:</label>
+      <input type="text"name="oxygen" id="dissolvedOxygen" placeholder="mg/L">
+    </div>
+    <div class="form-group"> 
+      <label for="temperature">Temperature:</label>
+      <input type="text" name="temp" id="temperature" placeholder="°C">
+    </div>
+    <div class="form-group">
+      <label for="conductivity">Conductivity:</label>
+      <input type="text" name="cond" id="conductivity" placeholder="µS/cm">
+    </div>
+    <div class="form-group">
+      <label for="turbidity">Turbidity:</label>
+      <input type="text" name="turbidity" id="turbidity" placeholder="NTU">
+    </div>
+    <div class="form-group">
+      <label for="TDS">Total Dissolved Solids (TDS):</label>
+      <input type="text" name="tds" id="TDS" placeholder="mg/L">
+    </div>
+    <div class="form-group">
+        <label for="chlorine">Chlorine:</label>
+        <input type="text" name="chlorine" id="chlorine" placeholder="mg/L">
+      </div>
+      <button type="submit">Classify</button>
+      <div id="result"></div>
+      </form>
+    </div>
+  
+  </body>
+  </html>
+  

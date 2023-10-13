@@ -1,0 +1,80 @@
+<html>
+<head>
+  <title>AQUA SORT</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family:Felix titling;
+    background-image: url(https://media.istockphoto.com/id/925440650/photo/underwater-bubbles.jpg?b=1&s=170667a&w=0&k=20&c=Yj-XfmgHt7px9xRmT0lCQXsU7dtmb8x_c0DzxKlRghM=);
+    background-size: cover;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .project-name {
+    text-align: center;
+    color: white;
+    font-size: 100px;
+  }
+  
+  .about-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color:lightseagreen;
+    color: white;
+    border: none;
+    cursor: 10;
+    font-size: 16px;
+  }
+  .bottom-right {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .sign-in-button,
+  .sign-up-button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  a{
+            text-decoration: none;
+            color:antiquewhite
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="project-name">AQUA SORT</h1>
+    <button class="about-button" onclick="showAbout()">About Us</button>
+    <div class="bottom-right">
+      <button class="sign-in-button"><a href="/login">Sign In</a></button>
+      <button class="sign-up-button"><a href="/signup">Sign Up</a></button>
+    </div>
+  </div>
+
+  <script>function showAbout() {
+     
+    var paragraph = document.createElement('p');
+    paragraph.textContent = 'Find your best fit use of water with us.';
+  
+    
+    var container = document.querySelector('.container');
+    container.appendChild(paragraph);
+  }
+  </script>
+</body>
+</html>
